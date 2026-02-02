@@ -1,0 +1,52 @@
+models:
+  openai/gpt-4o-2024-11-20:
+    endpoint: "https://kodekey.ai.kodekloud.com/v1/chat/completions"
+    api_key: "${OPENAI_API_KEY}"
+    auth_header: "Authorization"
+    auth_prefix: "Bearer"
+    rate_limit: 100
+
+  openai/gpt-4.1:
+    endpoint: "https://kodekey.ai.kodekloud.com/v1/chat/completions"
+    api_key: "${OPENAI_API_KEY}"
+    auth_header: "Authorization"
+    auth_prefix: "Bearer"
+    rate_limit: 100
+  
+  anthropic/claude-sonnet-4:
+    endpoint: "https://kodekey.ai.kodekloud.com/v1/complete"
+    api_key: "${ANTHROPIC_API_KEY}"
+    auth_header: "x-api-key"
+    auth_prefix: ""
+    rate_limit: 90
+  
+  llama-2-7b-mini:
+    endpoint: "https://api.llama2.com/v1/chat/completions"
+    api_key: "${LLAMA2_API_KEY}"
+    auth_header: "Authorization"  
+    auth_prefix: "Bearer"
+    rate_limit: 100
+
+rate_limits:
+  default: 100
+  by_group:
+    free: 50
+    pro: 200
+    enterprise: 500
+
+access_control:
+  openai/gpt-4o-2024-11-20:
+    groups: ["pro", "enterprise"]
+    roles: ["user", "admin"]
+
+  openai/gpt-4.1:
+    groups: ["free", "pro", "enterprise"]
+    roles: ["user", "admin"]
+
+  anthropic/claude-sonnet-4:
+    groups: ["pro", "enterprise"]
+    roles: ["user", "admin"]
+
+  llama-2-7b-mini:
+    groups: ["free", "pro", "enterprise"]
+    roles: ["user", "admin"]
