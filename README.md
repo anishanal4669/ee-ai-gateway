@@ -384,7 +384,7 @@ Solution: Use one of: gpt-4, llama-2, mistral (check JWT claims)
 For issues, questions, or feature requests:
 1. Check existing issues in GitHub
 2. Create detailed bug report with logs
-3. Contact: ai-gateway-team@company.com
+3. Contact: https://medium.com/@anishanal4669
 
 ---
 
